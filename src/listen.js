@@ -12,6 +12,8 @@ const speaker = new Speaker({
 const decoder = new lame.Decoder();
 
 export default function (streamUrl) {
-  const connection = request.get(streamUrl);
-  connection.pipe(decoder).pipe(speaker);
+  request
+    .get(streamUrl)
+    .pipe(decoder)
+    .pipe(speaker);
 }
