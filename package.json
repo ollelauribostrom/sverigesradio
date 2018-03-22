@@ -1,6 +1,6 @@
 {
   "name": "sverigesradio",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "CLI for streaming Sveriges Radio (P1, P2, P3)",
   "main": "dist/index.js",
   "bin": {
