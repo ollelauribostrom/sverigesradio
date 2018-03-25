@@ -22,6 +22,12 @@ sverigesradio p2
 sverigesradio p3
 ```
 
+Running the tests
+-----------------
+Tests: `npm test`    
+Coverage: `npm run coverage`    
+Linter: `npm run lint`    
+
 Support
 -------
 Please [open an issue](https://github.com/ollelauribostrom/sverigesradio/issues/new) for support.
