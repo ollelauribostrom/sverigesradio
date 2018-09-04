@@ -18,4 +18,8 @@ describe('channels.js', () => {
     channels.select('p1');
     expect(channels.active.name).toEqual('P1');
   });
+  it('select should default to P3 when not passing any channel argument', () => {
+    channels.select();
+    expect(channels.active.name).toEqual('P3');
+  });
 });

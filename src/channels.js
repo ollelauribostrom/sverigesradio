@@ -16,7 +16,7 @@ const channels = {
 export default {
   ...channels,
   active: channels.P3,
-  select(channelName) {
+  select(channelName = '') {
     this.active = this[channelName.toUpperCase()] || channels.P3;
   },
 };
