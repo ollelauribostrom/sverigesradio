@@ -1,5 +1,5 @@
 # Sveriges Radio CLI
-[![Known Vulnerabilities](https://snyk.io/test/github/ollelauribostrom/sverigesradio/badge.svg?targetFile=package.json)](https://snyk.io/test/github/ollelauribostrom/sverigesradio?targetFile=package.json) [![npm version](https://badge.fury.io/js/sverigesradio.svg)](https://badge.fury.io/js/sverigesradio)
+[![Build Status](https://travis-ci.org/ollelauribostrom/sverigesradio.svg?branch=master)](https://travis-ci.org/ollelauribostrom/sverigesradio)[![Coverage Status](https://coveralls.io/repos/github/ollelauribostrom/sverigesradio/badge.svg?branch=master)](https://coveralls.io/github/ollelauribostrom/sverigesradio?branch=master)[![Known Vulnerabilities](https://snyk.io/test/github/ollelauribostrom/sverigesradio/badge.svg?targetFile=package.json)](https://snyk.io/test/github/ollelauribostrom/sverigesradio?targetFile=package.json) [![npm version](https://badge.fury.io/js/sverigesradio.svg)](https://badge.fury.io/js/sverigesradio)
 
 CLI for streaming Sveriges Radio (P1, P2, P3) written in JavaScript
 
