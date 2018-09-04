@@ -6,7 +6,6 @@ npm-debug.log
 # Coverage directory
 coverage
 .nyc_output
-.coveralls.yml
 
 # Dependency directories
 node_modules

@@ -62,6 +62,8 @@
   },
   "homepage": "https://github.com/ollelauribostrom/sverigesradio#readme",
   "jest": {
-    "coverageDirectory": "<rootDir>/test/coverage"
+    "coverageDirectory": "<rootDir>/test/coverage",
+    "testEnvironment": "node",
+    "collectCoverageFrom": ["src/**.js"]
   }
 }
