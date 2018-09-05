@@ -2,6 +2,9 @@ sudo: false
 language: node_js
 node_js:
 - '8'
+env:
+  # avoid ALSA errors
+  - AUDIODEV=null
 branches:
   only:
   - master
@@ -9,7 +12,8 @@ cache:
   directories:
   - node_modules
 before_install:
-- sudo apt-get install libasound2-dev
+- sudo apt-get install -y libasound2-dev alsa-utils alsa-oss
+- sudo modprobe snd-dummy
 - npm update
 install:
 - npm install

@@ -1,17 +1,15 @@
 import request from 'request';
 import Speaker from 'speaker';
-import lame from 'lame';
+import { Decoder, STEREO } from 'lame';
 
-const speaker = new Speaker({
-  channels: 2,
-  bitDepth: 16,
-  sampleRate: 44100,
-  mode: lame.STEREO,
-});
-
-const decoder = new lame.Decoder();
-
-export default function (streamUrl) {
+export function listen(streamUrl) {
+  const decoder = new Decoder();
+  const speaker = new Speaker({
+    channels: 2,
+    bitDepth: 16,
+    sampleRate: 44100,
+    mode: STEREO,
+  });
   request
     .get(streamUrl)
     .pipe(decoder)
