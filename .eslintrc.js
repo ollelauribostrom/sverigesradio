@@ -10,12 +10,14 @@ module.exports = {
   },
   "rules": {
     "no-console": 0,
+    "import/prefer-default-export": 0,
     "no-unused-vars": ["error", {
       "varsIgnorePattern": "chai|should",
       "ignoreRestSiblings": true,
     }],
   },
   "globals": {
+    "jest": true,
     "describe": true,
     "before": true,
     "it": true,

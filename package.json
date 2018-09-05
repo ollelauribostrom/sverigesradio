@@ -4,7 +4,7 @@
   "description": "CLI for streaming Sveriges Radio (P1, P2, P3)",
   "main": "dist/index.js",
   "bin": {
-    "sverigesradio": "dist/index.js"
+    "sverigesradio": "dist/bin.js"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -64,6 +64,8 @@
   "jest": {
     "coverageDirectory": "<rootDir>/test/coverage",
     "testEnvironment": "node",
-    "collectCoverageFrom": ["src/**.js"]
+    "collectCoverageFrom": [
+      "src/**.js"
+    ]
   }
 }
