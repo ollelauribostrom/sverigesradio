@@ -1,3 +1,10 @@
 src
 test
 .idea
+sverigesradio-*.tgz
+.github
+.babelrc
+.editorconfig
+.eslintrc.js
+.npmignore
+.travis.yml
