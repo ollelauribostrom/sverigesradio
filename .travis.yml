@@ -3,9 +3,6 @@ language: node_js
 node_js:
 - '8'
 - '10'
-branches:
-  only:
-  - master
 cache:
   directories:
   - node_modules
@@ -28,6 +25,7 @@ deploy:
     on:
       node: '8'
       tags: true
+      branch: master
   - provider: npm
     skip_cleanup: true
     email: "ollebostr@gmail.com"
@@ -35,3 +33,4 @@ deploy:
     on:
       node: '8'
       tags: true
+      branch: master
