@@ -26,10 +26,12 @@ deploy:
     file: "sverigesradio-*.tgz"
     skip_cleanup: true
     on:
+      node: '8'
       tags: true
   - provider: npm
     skip_cleanup: true
     email: "ollebostr@gmail.com"
     api_key: $NPM_TOKEN
     on:
+      node: '8'
       tags: true
