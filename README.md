@@ -1,7 +1,7 @@
 # Sveriges Radio CLI
 [![Build Status](https://travis-ci.org/ollelauribostrom/sverigesradio.svg?branch=master)](https://travis-ci.org/ollelauribostrom/sverigesradio) [![Coverage Status](https://coveralls.io/repos/github/ollelauribostrom/sverigesradio/badge.svg?branch=master)](https://coveralls.io/github/ollelauribostrom/sverigesradio?branch=master) [![Known Vulnerabilities](https://snyk.io/test/github/ollelauribostrom/sverigesradio/badge.svg?targetFile=package.json)](https://snyk.io/test/github/ollelauribostrom/sverigesradio?targetFile=package.json) [![npm version](https://badge.fury.io/js/sverigesradio.svg)](https://badge.fury.io/js/sverigesradio)
 
-CLI for streaming radio from Sveriges Radio (P1, P2, P3) written in JavaScript
+CLI for streaming radio from Sveriges Radio (P1, P2, P3, P4) written in JavaScript
 
 > Currently tested on: **OSX (10.11.1)**, **Raspbian Stretch (4.9)**
 
@@ -13,13 +13,20 @@ Installation
 On Debian/Ubuntu, be sure to have the alsa.h header file in place:   
 `sudo apt-get install libasound2-dev`
 
-Example Usage
+Usage
 -----
 ```sh
 sverigesradio
 sverigesradio p1
 sverigesradio p2
 sverigesradio p3
+sverigesradio p4-blekinge
+sverigesradio p4-dalarna
+sverigesradio p4-gotland
+sverigesradio p4-gävleborg
+sverigesradio p4-göteborg
+sverigesradio p4-halland
+sverigesradio p4-jämtland
 ```  
 
 Running your own local development copy

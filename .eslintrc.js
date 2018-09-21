@@ -15,6 +15,7 @@ module.exports = {
       "varsIgnorePattern": "chai|should",
       "ignoreRestSiblings": true,
     }],
+    "no-param-reassign": 0
   },
   "globals": {
     "jest": true,
