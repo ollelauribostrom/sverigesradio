@@ -1,5 +1,8 @@
 sudo: false
 language: node_js
+branches:
+  only:
+    master
 node_js:
 - '8'
 - '10'
@@ -13,6 +16,7 @@ install:
 - npm install
 script:
 - npm test
+- npm run lint
 - npm run coveralls
 after_success:
   - npm pack
