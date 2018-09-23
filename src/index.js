@@ -1,2 +1,2 @@
 export { listen } from './listen';
-export { channels, createChannelProvider } from './channels';
+export { createChannelProvider } from './channels';

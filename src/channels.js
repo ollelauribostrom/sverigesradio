@@ -1,19 +1,30 @@
-export const channels = {
-  P1: {
-    name: 'P1',
-    url: 'https://sverigesradio.se/topsy/direkt/srapi/132.mp3',
-  },
-  P2: {
-    name: 'P2',
-    url: 'https://sverigesradio.se/topsy/direkt/srapi/163.mp3',
-  },
-  P3: {
-    name: 'P3',
-    url: 'https://sverigesradio.se/topsy/direkt/srapi/164.mp3',
-  },
-};
+import request from 'request';
+import { endpointURL } from './config';
+import { parseChannels } from './utils';
 
-export function createChannelProvider() {
+export function createRequestError(response) {
+  const error = new Error();
+  error.statusCode = response && response.statusCode;
+  return error;
+}
+
+export function getChannels() {
+  return new Promise((resolve, reject) => {
+    request.get(endpointURL, (err, response, body) => {
+      if (err) {
+        reject(createRequestError(response));
+      }
+      if (response && response.statusCode !== 200) {
+        reject(createRequestError(response));
+      }
+      const { channels } = JSON.parse(body);
+      resolve(parseChannels(channels));
+    });
+  });
+}
+
+export async function createChannelProvider() {
+  const channels = await getChannels();
   return {
     active: channels.P3,
     select(channelName = '') {
