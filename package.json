@@ -31,6 +31,7 @@
   "author": "Olle Lauri Boström <ollebostr@gmail.com> (https://github.com/ollelauribostrom)",
   "license": "MIT",
   "dependencies": {
+    "chalk": "^2.4.1",
     "clear": "0.0.1",
     "commander": "^2.12.2",
     "lame": "^1.2.4",

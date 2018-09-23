@@ -8,3 +8,9 @@ export function parseChannels(channels) {
     return channelObj;
   }, {});
 }
+
+export function parseDate(timestring) {
+  const s = /([0-9])\d+/.exec(timestring)[0];
+  const n = Number(s);
+  return new Date(n);
+}
