@@ -3,7 +3,7 @@
 
 CLI for streaming radio from Sveriges Radio (P1, P2, P3, P4) written in JavaScript
 
-> Currently tested on: **OSX (10.11.1)**, **Raspbian Stretch (4.9)**
+> Currently tested on: **OSX (10.11.1)**, **Raspbian Stretch (4.9)**, **Windows 7 Enterprise Service Pack 1** 
 
 Installation
 -------
