@@ -3,6 +3,7 @@ import ora from 'ora';
 import { createChannelProvider } from '../src/channels';
 import { listen } from '../src/listen';
 import { run } from '../src/bin';
+import { createMetadataProvider } from '../src/metadata';
 
 jest.mock('clear', () => jest.fn());
 jest.mock('ora', () => jest.fn(() => ({ start: jest.fn(), fail: jest.fn() })));
@@ -12,6 +13,16 @@ jest.mock('../src/channels', () => ({
     select: jest.fn(),
     active: { liveaudio: { url: 'MOCKEDURL' }, name: 'P3' },
   })),
+}));
+jest.mock('../src/metadata', () => ({
+  createMetadataProvider: jest.fn(() => ({
+    onChange: jest.fn(),
+  })),
+}));
+jest.mock('chalk', () => ({
+  bold: arg => `BOLD(${arg})`,
+  hex: () => ({ visible: arg => `HEX(${arg})` }),
+  gray: arg => `GRAY(${arg})`,
 }));
 
 describe('Tests for bin.js', () => {
@@ -58,5 +69,23 @@ describe('Tests for bin.js', () => {
     await run(['', '']);
     expect(ora).toHaveBeenCalledWith('Could not connect to Sveriges Radio. Please check your connection.');
     expect(fail).toHaveBeenCalled();
+  });
+  it('should update on new meta data', async () => {
+    const onChange = jest.fn();
+    const spinner = { start: jest.fn() };
+    const provider = { onChange };
+    ora.mockReset();
+    ora.mockImplementation(() => spinner);
+    createChannelProvider.mockImplementation(() => ({
+      select: jest.fn(),
+      active: { liveaudio: { url: 'MOCKEDURL' }, name: 'P3' },
+    }));
+    createMetadataProvider.mockImplementation(() => provider);
+    await run(['', '']);
+    provider.currentProgram = 'PROGRAM';
+    provider.currentSong = 'SONG';
+    const onChangeListener = onChange.mock.calls[0][0];
+    onChangeListener();
+    expect(spinner.text).toEqual('BOLD(Sveriges Radio) HEX(P3): PROGRAMGRAY( - SONG)');
   });
 });

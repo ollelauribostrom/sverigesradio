@@ -1,5 +1,5 @@
 import request from 'request';
-import { endpointURL } from './config';
+import { channelEndpoint } from './config';
 import { parseChannels } from './utils';
 
 export function createRequestError(response) {
@@ -10,7 +10,7 @@ export function createRequestError(response) {
 
 export function getChannels() {
   return new Promise((resolve, reject) => {
-    request.get(endpointURL, (err, response, body) => {
+    request.get(channelEndpoint, (err, response, body) => {
       if (err) {
         reject(createRequestError(response));
       }
