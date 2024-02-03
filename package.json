@@ -35,7 +35,7 @@
     "commander": "^2.12.2",
     "lame": "^1.2.4",
     "ora": "^1.3.0",
-    "request": "^2.83.0",
+    "request": "^2.88.2",
     "speaker": "^0.4.0"
   },
   "directories": {
